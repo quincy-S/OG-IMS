@@ -1,12 +1,9 @@
-# fly.toml file generated for ogims on 2023-06-04T20:45:48Z
+# fly.toml file generated for ogims on 2023-06-04T21:57:09Z
 
 app = "ogims"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
-
-[build]
-  builder = "heroku/buildpacks:20"
 
 [env]
   PORT = "8080"

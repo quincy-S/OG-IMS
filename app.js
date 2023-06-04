@@ -12,8 +12,6 @@ const usersRouter = require("./routes/users");
 
 mongoose.set("strictQuery", false);
 
-logger.info(`connecting to ${config.MONGODB_URI}`);
-
 mongoose
   .connect(config.MONGODB_URI)
   .then((result) => {
@@ -24,7 +22,7 @@ mongoose
   );
 
 app.use(cors());
-app.use(express.static("build"));
+app.use(express.static("dist"));
 app.use(express.json());
 app.use("/api/login", loginRouter);
 app.use("/api/orders", ordersRouter);
