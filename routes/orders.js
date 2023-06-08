@@ -47,6 +47,7 @@ router.post("/", async (req, res) => {
     vendor: req.body.vendor,
     channel: req.body.channel,
     order: req.body.order,
+    note: req.body.note,
     amount: Number(req.body.amount),
     price: Number(req.body.price),
     user: user._id,
@@ -72,6 +73,7 @@ function validateOrder(order) {
     channel: Joi.string().min(3),
     order: Joi.string().min(4),
     amount: Joi.number(),
+    note: Joi.string().allow(),
     price: Joi.number(),
     userId: Joi.string(),
   });
